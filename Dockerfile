@@ -4,10 +4,6 @@ MAINTAINER Owen Ouyang <owen.ouyang@live.com>
 ENV LOG_DIR="/var/log/docker" \
     TERM=dumb 
 
-# Enable silent install
-RUN echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-
 RUN add-apt-repository "deb http://archive.canonical.com/ trusty partner"
 RUN apt-get update
 RUN apt-get install -y software-properties-common \
